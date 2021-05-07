@@ -37,15 +37,6 @@
           <span></span>
         </div>
       </div>
-      <div class="navbar-item" id="search-bar">
-        <div class="container">
-          <div class="columns">
-            <div class="column is-full">
-              <input class="input is-medium" type="search" placeholder="Search...">
-            </div>
-          </div>
-        </div>
-      </div>
         <div class="navbar-end is-expanded">
           <% if user_signed_in? %>
           <div class="user-account-dropdown">
@@ -61,7 +52,7 @@
               <div class="dropdown-menu">
                 <div class="dropdown-content">
                   <div class="dropdown-item">
-                    <%= link_to "Profile", user_path_url(current_user.id)%>
+                    <%= link_to "Profile", user_path(current_user.id)%>
                   </div>
                   <div class="dropdown-item">
                     <%= link_to "Cliques" %>
