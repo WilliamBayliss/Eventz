@@ -2,9 +2,11 @@
     <% @user_events = Event.where(creator_id: @user.id) %>
     <% @user_events.each do |event| %>
             <div class="box">
-                <p class="control">
+                <div class="block">
+                <h4 class="control title is-4">
                     <%= event.title %>
                 </p>
+                </div>
                 <p class="control">
                     <%= event.description %>
                 </p>

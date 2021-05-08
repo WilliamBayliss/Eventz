@@ -39,20 +39,24 @@
       </div>
         <div class="navbar-end is-expanded">
           <% if user_signed_in? %>
+          <button class="button is-success is-medium is-light mx-4">
+            <%= link_to "New Event", new_event_path %>
+          </button>
           <div class="user-account-dropdown">
             <div class="dropdown is-hoverable">
               <div class="dropdown-trigger">
                 <div class="control">
-                  <button class="button is-light is-medium" aria-haspopup="true">
+                  <button class="button is-success is-light is-medium" aria-haspopup="true">
                     <%= current_user.username %>
                   </button>
                 </div>
               </div>
-              <div class="navbar-divider"></div>
               <div class="dropdown-menu">
                 <div class="dropdown-content">
                   <div class="dropdown-item">
                     <%= link_to "Profile", user_path(current_user.id)%>
+                      <hr class="navbar-divider">
+
                   </div>
 
                   <div class="dropdown-item">                  

@@ -1,4 +1,27 @@
-<p id="notice"><%= notice %></p>
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-4">
+                <div class="box">
+                    <h3 class="title is-3">
+                        <%= @event.title %>
+                    </h3>
+                    <div class="block">
+                        <p class="control">by <%= link_to @event.creator.username, user_path(@event.creator.id) %></p>
+                    </div>
+                    <div class="block">
+                        <p class="control">
+                            <%= @event.description %>
+                        </p>
+                    </div>
+                </div>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+                <p id="notice"><%= notice %></p>
+
+                <%= link_to 'Edit', edit_event_path(@event) %> |
+                <%= link_to 'Back', events_path %>
+            </div>
+        
+        </div>
+    </div>
+</section>
