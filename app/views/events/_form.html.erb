@@ -24,10 +24,9 @@
     </div>
   </div>
 
-  <div class="field">
+  <div class="field is-grouped">
     <div class="control">
-      <%= form.label :date, class: "label" %>
-      <%= form.date_field :date, class: %>
+      <%= form.date_select :date, :order => [:month, :day, :year] %>
     </div>
   </div>
 
