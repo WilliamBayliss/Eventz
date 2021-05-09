@@ -5,7 +5,7 @@ class Event < ApplicationRecord
 
     scope :past, -> { where("date < ?", Date.today) }
     scope :upcoming, -> { where("date > ?", Date.today) }
-
+    scope :current, -> { where("date = ?", Date.today) }
     # def self.past
     #     self.where("date < ?", Date.today)
     # end
