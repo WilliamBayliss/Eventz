@@ -1,23 +1,23 @@
 <div class="column is-half"> 
     <h3 class="title is-3">
-        Past Events:
+        Current Events:
     </h3>
-    <% @past_events = Event.past %>
-    <% @past_events.each do |past_event| %>
+    <% @current_events = Event.current %>
+    <% @current_events.each do |event| %>
         <div class="box">
             <div class="block">
             <h4 class="control title is-4">
-                <%= link_to past_event.title, event_path(past_event.id) %>
+                <%= link_to event.title, event_path(event.id) %>
             </h4>
             <p class="control">
-                by <%= link_to past_event.creator.username, user_path(past_event.creator.id) %>
+                by <%= link_to event.creator.username, user_path(event.creator.id) %>
             </p>
             <p class="control">
-                <%= past_event.date %>
+                <%= event.date %>
             </p>
             </div>
             <p class="control">
-                <%= past_event.description %>
+                <%= event.description %>
             </p>
         </div>
     <% end %>

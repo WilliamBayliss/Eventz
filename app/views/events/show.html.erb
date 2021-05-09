@@ -1,6 +1,9 @@
 <section class="section">
     <div class="container">
+
+        <%= link_to "Attend", new_guest_list_path %>
         <div class="columns is-centered">
+
             <div class="column is-half">
                 <div class="box">
                     <h2 class="title is-2">
@@ -25,20 +28,27 @@
                 <%= link_to 'Edit', edit_event_path(@event) %> |
                 <%= link_to 'Back', events_path %>
             </div>
-            <% if @event.attendees.any? %>
-                <div class="column is-3">
-                    <div class="box">
-                        <h4 class="title is-4">Attending:</h4>
-                            <% @event.attendees.each do |user| %>
-                                <div class="block">
-                                    <p class="control">
-                                        <%= link_to user.username, user_path(user.id) %>
-                                    </p>
-                                </div>
-                            <% end %>
-                    </div>
+            <div class="content">
+                <% if @event.creator == current_user %>
+                <div class="box">
+                    <%= render 'invite_form' %>
                 </div>
-            <% end %>
+                <% end %>
+                <% if @event.attendees.any? %>
+                    <div class="column is-full">
+                        <div class="box">
+                            <h4 class="title is-4">Attending:</h4>
+                                <% @event.attendees.each do |user| %>
+                                    <div class="block">
+                                        <p class="control">
+                                            <%= link_to user.username, user_path(user.id) %>
+                                        </p>
+                                    </div>
+                                <% end %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
         
         </div>
     </div>

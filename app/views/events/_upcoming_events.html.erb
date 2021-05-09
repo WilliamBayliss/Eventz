@@ -7,8 +7,11 @@
             <div class="box">
                 <div class="block">
                 <h4 class="control title is-4">
-                    <%= upcoming_event.title %>
+                    <%= link_to upcoming_event.title, event_path(upcoming_event.id) %>
                 </h4>
+                <p class="control">
+                    by <%= link_to upcoming_event.creator.username, user_path(upcoming_event.creator.id) %>
+                </p>
                 <p class="control">
                     <%= upcoming_event.date %>
                 </p>
