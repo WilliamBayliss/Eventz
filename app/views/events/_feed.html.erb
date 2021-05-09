@@ -1,13 +1,4 @@
-<div class="column is-4">
-    <% @events.each do |event| %>
-        <div class="box">
-            <h4 class="title control is-4">
-                <%= link_to event.title, event_path(event.id) %>
-            </h4>
-            <small>by <%= link_to event.creator.username, user_path(event.creator.id) %></small>
-            <p class="control">
-                <%= event.description %>
-            </p>
-        </div>
-    <% end %>
+<div class="columns">
+    <%= render 'past_events' %>
+    <%= render 'upcoming_events' %>
 </div>

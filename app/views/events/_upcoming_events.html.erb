@@ -1,0 +1,21 @@
+<div class="column is-half">
+    <h3 class="title is-3">
+        Upcoming Events:
+    </h3>
+    <% @upcoming_events = Event.upcoming %>
+    <% @upcoming_events.each do |upcoming_event| %>
+            <div class="box">
+                <div class="block">
+                <h4 class="control title is-4">
+                    <%= upcoming_event.title %>
+                </h4>
+                <p class="control">
+                    <%= upcoming_event.date %>
+                </p>
+                </div>
+                <p class="control">
+                    <%= upcoming_event.description %>
+                </p>
+            </div>
+    <% end %>
+</div>
