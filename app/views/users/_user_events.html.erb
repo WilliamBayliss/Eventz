@@ -1,6 +1,5 @@
 <div class="column is-half">
-    <% @user_events = Event.where(creator_id: @user.id) %>
-    <% @user_events.each do |event| %>
+    <% @user.attended_events.each do |event| %>
             <div class="box">
                 <div class="block">
                 <h4 class="control title is-4">
