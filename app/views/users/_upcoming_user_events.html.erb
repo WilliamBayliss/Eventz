@@ -3,19 +3,27 @@
         Upcoming Events:
     </h3>
     <% @upcoming_events = @user.attended_events.upcoming %>
-    <% @upcoming_events.each do |upcoming_event| %>
-            <div class="box">
-                <div class="block">
-                <h4 class="control title is-4">
-                    <%= upcoming_event.title %>
-                </h4>
-                <p class="control">
-                    <%= upcoming_event.date %>
-                </p>
+    <% if @upcoming_events.any? %>
+        <% @upcoming_events.each do |upcoming_event| %>
+                <div class="box">
+                    <div class="block">
+                    <h4 class="control title is-4">
+                        <%= upcoming_event.title %>
+                    </h4>
+                    <p class="control">
+                        <%= upcoming_event.date %>
+                    </p>
+                    </div>
+                    <p class="control">
+                        <%= upcoming_event.description %>
+                    </p>
                 </div>
-                <p class="control">
-                    <%= upcoming_event.description %>
-                </p>
-            </div>
+        <% end %>
+    <% else %>
+        <div class="box">
+            <h4 class="title is-4">
+                No upcoming events!
+            </h4>
+        </div>
     <% end %>
 </div>
